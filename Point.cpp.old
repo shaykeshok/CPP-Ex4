@@ -1,0 +1,18 @@
+#include <iostream>
+#include <stdexcept>
+#include <algorithm>
+#include "Point.hpp"
+#include <stdio.h>
+
+namespace Point{
+    void Point::setPosition(int x_pos,int y_pos){
+        this->x=x_pos;
+        this->y=y_pos;
+    }
+    int Point::getX_pos(){
+        return this->x;
+    }
+    int Point::getY_pos(){
+        return this->y;
+    }
+}
