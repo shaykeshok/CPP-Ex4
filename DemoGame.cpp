@@ -6,13 +6,14 @@
  * @author Erel Segal-Halevi
  * @since  2020-05
  */
-
+#include <iostream>
 #include "DemoGame.hpp"
 #include "FootSoldier.hpp"
 #include "FootCommander.hpp"
+#include <typeinfo>
 
 #include <cassert>
-
+using namespace std;
 namespace WarGame {
 
 		DemoGame::DemoGame(): board (8, 8) {
@@ -28,7 +29,11 @@ namespace WarGame {
 			board[{7,1}] = new FootSoldier(2);
 			board[{7,3}] = new FootCommander(2);
 			board[{7,5}] = new FootSoldier(2);
-			assert(board.has_soldiers(2));
+			// const type_info& ti1 = typeid(board[{7,5}]); 
+			// cout<< "\n\nti1:"<<ti1.name() << endl;
+			// const type_info& ti2 = typeid(board[{7,1}]); 
+			// cout<< "\n\nti2:"<<ti2.name() << endl;
+ 			assert(board.has_soldiers(2));
 
 			// In your game, you can put more soldier types, such as the sniper and the paramedic types.
 		}

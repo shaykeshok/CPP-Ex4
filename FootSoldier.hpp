@@ -8,11 +8,8 @@ class FootSoldier : public Soldier
 {
 private:
 public:
-    FootSoldier(int x_pos,int y_pos){
-        health=100;
-        damage=10;
-        //position.setPosition(x_pos,y_pos)
-    };
+    FootSoldier(uint _player) : Soldier(_player, 1, 100, 10) {}
+
     ~FootSoldier();
 };
 

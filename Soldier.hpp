@@ -1,22 +1,23 @@
+
+#pragma once
 #include <string>
 #include <vector>
 #include <stdexcept>
-/* #include "Point.hpp"*/
+
 namespace WarGame
 {
 class Soldier
 {
-protected:
-   int health;
-   int damage;
-   //Point position;
-   int steps=1;
 public:
-    Soldier();
+    uint player;
+    int health;
+    int damage;
+    int steps;
+
+    Soldier(uint playerID, int _steps, uint _health,  uint _damage = 0) : player(playerID), health(_health), damage(_damage), steps(_steps) {}
     ~Soldier();
-    void attack();
+
+    void active();
 };
 
-
-
-}
+} // namespace WarGame
