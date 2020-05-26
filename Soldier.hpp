@@ -15,7 +15,7 @@ public:
     int steps;
 
     Soldier(uint playerID, int _steps, uint _health,  uint _damage = 0) : player(playerID), health(_health), damage(_damage), steps(_steps) {}
-    ~Soldier();
+    ~Soldier(){};
 
     void active();
 };
