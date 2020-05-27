@@ -67,6 +67,7 @@ namespace WarGame
 			{
 				Soldier *soldier = board[{iRow, iCol}];
 				if (soldier)
+				// cout<<"";
 					delete soldier;
 			}
 		}

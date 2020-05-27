@@ -8,13 +8,13 @@ using namespace std;
 
 namespace WarGame
 {
-static int index = 0;
+    static int index = 0;
 
-bool Board::has_soldiers(uint player_number) const
-{
-    index++;
+    bool Board::has_soldiers(uint player_number) const
+    {
+        index++;
 
-   /*  if (index == 1)
+        /*  if (index == 1)
         return false;
     if (index == 2)
         return true;
@@ -23,27 +23,31 @@ bool Board::has_soldiers(uint player_number) const
     if (index == 4)
         return true;
     return true; */
-    for(int i=0;i<board.size();i++){
-        for(int j=0;j<board[i].size();j++){
-            if(board[i][j]!=nullptr && board[i][j]->player==player_number) return true;
+        for (int i = 0; i < board.size(); i++)
+        {
+            for (int j = 0; j < board[i].size(); j++)
+            {
+                if (board[i][j] != nullptr && board[i][j]->player == player_number)
+                    return true;
+            }
         }
-    }
-    return false;
+        return false;
+    };
 
-};
+    void Board::move(uint player_number, std::pair<int, int> source, MoveDIR direction){};
 
-void Board::move(uint player_number, std::pair<int, int> source, MoveDIR direction){};
-
-Soldier *&Board::operator[](std::pair<int, int> location)
-{
-    /*  Soldier *soldier=new Soldier();
+    Soldier *&Board::operator[](std::pair<int, int> location)
+    {
+        /*  Soldier *soldier=new Soldier();
     return soldier; */
-    return board[0][1];
-}
+        // return board[0][1];
+        return board[location.first][location.second];
+    }
 
-Soldier *Board::operator[](std::pair<int, int> location) const
-{
-    return board[0][1];
-}
+    Soldier *Board::operator[](std::pair<int, int> location) const
+    {
+        // return board[0][1];
+        return board[location.first][location.second];
+    }
 
 } // namespace WarGame
