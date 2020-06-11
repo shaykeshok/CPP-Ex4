@@ -1,18 +1,22 @@
+#pragma once
+
 #include <string>
 #include <vector>
 #include <stdexcept>
-#include "Soldier.hpp"
+#include "Paramedic.hpp"
 
 namespace WarGame
 {
-class ParamedicCommander:public Soldier
-{
-private:
-public:
-    ParamedicCommander(uint _player) : Soldier(_player, 1, 150, 20){}
-    ~ParamedicCommander();
-};
-
-
+    class ParamedicCommander : public Paramedic
+    {
+    private:
+    public:
+        ParamedicCommander(uint _player) : Paramedic(_player)
+        {
+            health += 100;
+        }
+        ~ParamedicCommander();
+        void active(std::pair<int, int> source, std::vector<std::vector<Soldier *>> board) override;
+    };
 
 } // namespace WarGame
